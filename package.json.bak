@@ -1,0 +1,22 @@
+{
+  "name": "yallarehere",
+  "version": "1.0.0",
+  "description": "Y'all are here is an app for event organizers to streamline attendee entry, fostering an inclusive experience with user-friendly features for latecomers.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-watch": "nodemon index.js",
+    "dev": "concurrently \"npm run start-watch\" \"cd client && npm run dev\""
+  },
+  "author": "intelagense",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
