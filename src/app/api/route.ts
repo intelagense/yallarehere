@@ -2,21 +2,20 @@ import { NextResponse } from "next/server";
 import connectDB from "@/app/utils/dbConnect";
 // import TodoModel from "@/models/todo";
 
-
 connectDB();
 
 // Get all todos in mongo instance
 export async function GET(request: Request) {
     // const res = await TodoModel.find({});
     // return NextResponse.json({ Todos: res });
-    return NextResponse.json({ message: "Gum Ball" });
+    return NextResponse.json({ message: "GET REQUEST" });
 }
 
 // Add all todos in mongo instance
 export async function POST(request: Request) {
     const formData = await request.json();
     console.log(formData);
-    return NextResponse.json({ message: "Hello from next server" });
+    return NextResponse.json({ message: "POST REQUEST" });
 }
 // import { connectToDB } from "@/utils/dbConnect"
 
