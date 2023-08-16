@@ -1,33 +1,35 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/app/utils/dbConnect";
-// import TodoModel from "@/models/todo";
+import Event from '../../models/event';
 
 connectDB();
 
-// Get all todos in mongo instance
-export async function GET(request: Request) {
-    // const res = await TodoModel.find({});
-    // return NextResponse.json({ Todos: res });
-    return NextResponse.json({ message: "GET REQUEST" });
+export async function GET(req: NextRequest) {
+    try {
+        const eventId = req.nextUrl.pathname.split('/').pop();
+        const event = await Event.findOne({ event_id: eventId }).exec();
+
+        if (!event) {
+            return NextResponse.json({ message: "Event not found" }, { status: 404 });
+        }
+
+        return NextResponse.json(event);
+    } catch (error) {
+        console.error("Error fetching event:", error);
+        return NextResponse.json({ message: "Error fetching event" }, { status: 500 });
+    }
 }
 
 // Add all todos in mongo instance
-export async function POST(request: Request) {
-    const formData = await request.json();
-    console.log(formData);
-    return NextResponse.json({ message: "POST REQUEST" });
+export async function POST(req: NextRequest) {
+    // Placeholder code
+    // const body = await req.json();
+    // console.log("POST REQUEST", body);
+
+    console.log("POST REQUEST");
+    return new Response('OK BUDDY')
 }
-// import { connectToDB } from "@/utils/dbConnect"
 
-
-// const Event = require('../models/event')
-
-// router.get('/events/:event_id', (req, res, next) => {
-//   // get specific event details
-//   Event.find({}, req.params.event_id)
-//     .then((data) => res.json(data))
-//     .catch(next);
-// });
 
 // router.post('/events', (req, res, next) => {
 //   console.log(req.body)
