@@ -1,11 +1,10 @@
 'use client'
 
-export default function edit() {
+export default function edit( { params }: { params: { eventId:string } }) {
     const makeApiCall = async () => {
 
-        await fetch('/api', {
+        await fetch(`/api/events/${params.eventId}`, {
             method: 'GET',
-            // body: JSON.stringify({Hellow: 'world'})
         })
     }
     

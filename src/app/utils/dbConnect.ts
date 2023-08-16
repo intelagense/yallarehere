@@ -7,6 +7,7 @@ export default async function connectDB() {
 
         const conn = await mongoose.connect(DB_STRING)
         console.log(`MongoDB Connected: ${conn.connection.host}`)
+
     } catch (err) {
         console.error(err)
         process.exit(1)
