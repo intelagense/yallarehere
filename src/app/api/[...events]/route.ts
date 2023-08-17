@@ -51,7 +51,7 @@ export async function PUT(req: NextRequest) {
     const volunteer = await req.json();
 
     if (!volunteer) {
-        return { status: 400, text: 'Missing event ID' };
+        return { status: 400, text: 'Missing volunteer information' };
     }
 
     try {
@@ -67,7 +67,6 @@ export async function PUT(req: NextRequest) {
 
         return { status: 204 };
     } catch (error) {
-        console.error("Error deleting event:", error);
         return { status: 500, text: 'Internal Server Error' };
     }
 }
