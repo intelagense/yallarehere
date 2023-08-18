@@ -50,7 +50,7 @@ If you have a bug to report or a feature to suggest, you can create a new issue:
 
 1. **Submit a Pull Request:** Go to the original repository and click on "Compare & pull request." Fill in the details of your pull request, including a clear description of the changes you've made.
 
-1. **Review and Discussion:** After submitting a pull request, other contributors and maintainers will review your changes. Be ready to respond to any feedback or questions.
+1. **Review and Discussion:** After submitting a pull request, our contributors and maintainers will review your changes. Be ready to respond to any feedback or questions.
 
 1. **Merge and Close:** If your changes are approved, a maintainer will merge your pull request into the main repository.
 

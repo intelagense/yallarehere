@@ -21,7 +21,7 @@ Y'all Are Here is an innovative event management app that tackles the challenge 
 3. Run `npm install` to install the required dependencies.
 4. Create a `.env.local` file in the root directory with the following field(s):  
     ```shell
-    DB_STRING=mongodb+srv://[username]:[password]@[cluster].mongodb.net/
+    DB_STRING = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/'
     ```
     (Replace bracketed values with your own credentials.)
 5. Run `npm run dev` to start the development server.
