@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import { mongoose, models } from 'mongoose';
 
 const EventSchema = new mongoose.Schema({
     event_id: { type: String, required: true, unique: true },
@@ -13,4 +13,6 @@ const EventSchema = new mongoose.Schema({
     }],
 });
 
-module.exports = mongoose.model('Event', EventSchema);
+const Event = models.Event || mongoose.model('Event', EventSchema);
+
+export default Event
