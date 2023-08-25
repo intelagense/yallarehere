@@ -1,11 +1,16 @@
 "use client"
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { fetchEventData } from "@/app/utils/api";
 interface EventData {
   event_name: string;
   start_time: string;
   end_time: string;
   event_description: string;
+  volunteers: {
+    name: "name",
+    email: "email",
+    phone: "phone"
+  }
 }
 
 export default function Event({ params }: { params: { eventID: string } }) {
@@ -13,26 +18,22 @@ export default function Event({ params }: { params: { eventID: string } }) {
 
   async function fetchData() {
     try {
-      const res = await fetch(
-        `${process.env.DOMAIN}/api/events/${params.eventID}`
-      );
-      if (res.ok) {
-        const data = await res.json();
-        setEventData(data);
-      } else {
-        setEventData(null);
-      }
+      const data = await fetchEventData(params.eventID);
+      setEventData(data);
     } catch (error) {
       setEventData(null);
     }
   }
 
-  if (eventData === null) {
+  useEffect(() => {
     fetchData();
+  },);
+
+  if (eventData === null) {
     return (
       <>
-        <h1 className="text-center">Event not found</h1>
-        <p className="text-center">Check the URL</p>
+        <h1 className="text-center">Event loading or</h1>
+        <p className="text-center">Event not found</p>
       </>
     );
   }
