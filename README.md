@@ -21,9 +21,10 @@ Y'all Are Here is an innovative event management app that tackles the challenge 
 3. Run `npm install` to install the required dependencies.
 4. Create a `.env.local` file in the root directory with the following field(s):  
     ```shell
-    DB_STRING = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/'
+    DB_STRING='mongodb+srv://<username>:<password>@<cluster>.mongodb.net/'
+    DOMAIN='http://localhost:3000'
     ```
-    (Replace bracketed values with your own credentials.)
+    (Replace bracketed values with your own credentials. You can use localhost:3000 for development. Refer to `.env.local.example`)
 5. Run `npm run dev` to start the development server.
 6. Open your browser and go to `http://localhost:3000` (default) to access the app.
 
