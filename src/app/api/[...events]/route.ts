@@ -21,6 +21,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+
     try {
         const requestBody = await req.json();
 
@@ -49,7 +50,6 @@ export async function PUT(req: NextRequest) {
     }
 
     const volunteer = await req.json();
-
     if (!volunteer) {
         return { status: 400, text: 'Missing volunteer information' };
     }
@@ -64,10 +64,11 @@ export async function PUT(req: NextRequest) {
         if (!result) {
             return { status: 404, text: 'Event not found' };
         }
-
-        return { status: 204 };
+        console.log("204")
+        return { status: 204, text: 'Volunteer added' };
     } catch (error) {
-        return { status: 500, text: 'Internal Server Error' };
+        console.log("500")
+        return { status: 500, text: 'Internal Server Error!' };
     }
 }
 
