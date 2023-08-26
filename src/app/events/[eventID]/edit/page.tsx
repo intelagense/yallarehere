@@ -142,7 +142,7 @@ export default function Edit({ params }: { params: { eventID: string } }) {
                     <p></p>
                     <QRCodeSVG className='mt-2 flex content-center' value={`${process.env.DOMAIN}/${params.eventID}`} size={96} includeMargin={false} />
                     <p className="mt-2">Use QR Code</p>
-                    <p>or visit {process.env.DOMAIN}/{params.eventID} </p>
+                    <p>or visit {process.env.DOMAIN}/events/{params.eventID} </p>
                     <p>to contact a volunteer</p>
                   </div>
                 </section>
