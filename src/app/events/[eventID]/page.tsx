@@ -66,16 +66,23 @@ export default function Event({ params }: { params: { eventID: string } }) {
   return (
     <div className="h-5/6 text-center flex flex-col justify-around">
       <div>
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{eventData.event_name}</h1>
-        <h2 className="text-xl">
-          <p className="mt-2 text-gray-600 dark:text-gray-300">
+        <div>
+          <h1 className="mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">{eventData?.event_name}</h1>
+          <p className="text-2xl text-gray-900">
             {eventData?.start_time && eventData?.end_time ? (
-              `${new Date(eventData?.start_time).toLocaleDateString()} ${new Date(eventData?.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} - ${new Date(eventData?.end_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`
+              `${new Date(eventData?.start_time).toLocaleDateString()}`
             ) : (
               ''
             )}
           </p>
-        </h2>
+        </div>
+        {/* <p className="text-4xl text-gray-900">
+          {eventData?.start_time && eventData?.end_time ? (
+            `${new Date(eventData?.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} - ${new Date(eventData?.end_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`
+          ) : (
+            ''
+          )}
+        </p> */}
       </div>
       <div>
         <h3 className="text-2xl font-bold mb-4">Locked Out?</h3>
