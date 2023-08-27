@@ -140,7 +140,7 @@ export default function Edit({ params }: { params: { eventID: string } }) {
                   <div className="flex flex-col items-center justify-center">
                     <h3>Locked out?</h3>
                     <p></p>
-                    <QRCodeSVG className='mt-2 flex content-center' value={`${process.env.DOMAIN}/${params.eventID}`} size={96} includeMargin={false} />
+                    <QRCodeSVG className='mt-2 flex content-center' value={`${process.env.DOMAIN}/events/${params.eventID}`} size={96} includeMargin={false} />
                     <p className="mt-2">Use QR Code</p>
                     <p>or visit {process.env.DOMAIN}/events/{params.eventID} </p>
                     <p>to contact a volunteer</p>
