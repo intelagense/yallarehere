@@ -67,8 +67,8 @@ export default function Event({ params }: { params: { eventID: string } }) {
     <div className="h-5/6 text-center flex flex-col justify-around">
       <div>
         <div>
-          <h1 className="mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">{eventData?.event_name}</h1>
-          <p className="text-2xl text-gray-900">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{eventData.event_name}</h1>
+          <p className="text-2xl text-gray-900 dark:text-white">
             {eventData?.start_time && eventData?.end_time ? (
               `${new Date(eventData?.start_time).toLocaleDateString()}`
             ) : (
