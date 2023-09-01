@@ -21,8 +21,12 @@ Y'all Are Here is an innovative event management app that tackles the challenge 
 3. Run `npm install` to install the required dependencies.
 4. Create a `.env.local` file in the root directory with the following field(s):  
     ```shell
-    DB_STRING='mongodb+srv://<username>:<password>@<cluster>.mongodb.net/'
+    MONGODB_URI='mongodb+srv://<username>:<password>@<cluster>.mongodb.net/'
     DOMAIN='http://localhost:3000'
+    TWILIO_ACCOUNT_SID='<SID>'
+    TWILIO_AUTH_TOKEN='<TOKEN>'
+    TWILIO_PHONE_NUMBER='<Twilio number>'
+    TEST_USER='<Your verified number to receive texts>' # This is a temporary solution for a trial account.
     ```
     (Replace bracketed values with your own credentials. You can use localhost:3000 for development. Refer to `.env.local.example`)
 5. Run `npm run dev` to start the development server.
