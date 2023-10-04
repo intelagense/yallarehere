@@ -56,10 +56,10 @@ export default function Event({ params }: { params: { eventID: string } }) {
 
   if (eventData === null) {
     return (
-      <>
+      <div>
         <h1 className="text-center">Event loading or</h1>
-        <p className="text-center">Event not found</p>
-      </>
+        <p className="text-center">Event not found?</p>
+      </div>
     );
   }
 
