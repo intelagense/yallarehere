@@ -99,28 +99,28 @@ export default function Edit({ params }: { params: { eventID: string } }) {
 
   return (
     <>
-      <section className="bg-gray-300">
+      <section className="bg-blue-300">
         <form>
           <div className="grid gap-6 mx-2.5 pb-6 md:grid-cols-3">
             <div className="col-span-2 md:col-span-2">
               <h2>Create or Edit Event</h2>
               <div>
-                <label htmlFor="event_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Name</label>
-                <input type="text" id="event_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="My Event" required />
+                <label htmlFor="event_name" className="block mb-2 text-sm font-medium text-gray-900 ">Event Name</label>
+                <input type="text" id="event_name" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" placeholder="My Event" required />
               </div>
               <div>
-                <label htmlFor="start_time" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Time</label>
-                <input type="datetime-local" id="start_time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <label htmlFor="start_time" className="block mb-2 text-sm font-medium text-gray-900 ">Start Time</label>
+                <input type="datetime-local" id="start_time" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" required />
               </div>
               <div>
-                <label htmlFor="end_time" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Time</label>
-                <input type="datetime-local" id="end_time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                <label htmlFor="end_time" className="block mb-2 text-sm font-medium text-gray-900 ">End Time</label>
+                <input type="datetime-local" id="end_time" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" required />
               </div>
               <div>
-                <label htmlFor="event_description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                <textarea id="event_description" rows={4 as number} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a short description or any additional info here..."></textarea>
+                <label htmlFor="event_description" className="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
+                <textarea id="event_description" rows={4 as number} className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" placeholder="Write a short description or any additional info here..."></textarea>
               </div>
-              <button onClick={createEvent} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Event</button>
+              <button onClick={createEvent} type="button" className="h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md">Create Event</button>
             </div>
             <div className="col-span-2 md:col-span-1">
               <h2 className="mb-4 text-lg font-semibold">Preview</h2>
@@ -148,31 +148,31 @@ export default function Edit({ params }: { params: { eventID: string } }) {
                 </section>
               </div>
 
-              <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Print</button>
+              <button type="button" className="h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md">Print</button>
             </div>
           </div>
         </form>
       </section>
       <hr className="h-1 w-auto mx-auto bg-slate-700 border-0 dark:bg-slate-700" />
-      <section className="bg-gray-300">
+      <section className="bg-yellow-200">
         <h2>Add or remove volunteers</h2>
         <form>
           <div className="grid gap-6 mx-2.5 pb-6 md:grid-cols-2">
             <div>
               <div className="mb-2">
-                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
-                <input type="text" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Jay Doe" required />
+                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 ">First name</label>
+                <input type="text" id="name" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" placeholder="Jay Doe" required />
               </div>
               <div className="mb-2">
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
-                <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="jay.doe@company.com" required />
+                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Email address</label>
+                <input type="email" id="email" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" placeholder="jay.doe@company.com" required />
               </div>
               <div className="mb-6">
-                <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-                <input type="tel" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 ">Phone number</label>
+                <input type="tel" id="phone" className="w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
               </div>
               <div className="mb-6">
-                <button onClick={addVolunteers} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to list</button>
+                <button onClick={addVolunteers} type="button" className="h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md">Add to list</button>
               </div>
             </div>
             <div>
