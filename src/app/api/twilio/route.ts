@@ -1,23 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
+const twilio = require("twilio");
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
+const client = twilio(accountSid, authToken);
 
-export async function POST(req: NextRequest, res: NextResponse) {
-
-    try {
-        const message = await client.messages.create({
-            body: '🙏 Someone is at the door. Please let them in. 🥺',
-            from: process.env.TWILIO_PHONE_NUMBER,
-            to: process.env.TEST_USER
-        })
-        console.log(message.sid);
-        return NextResponse.json({ message: "It worked." }, { status: 200 });
-    } catch (error) {
-        console.log('Error sending SMS:', error);
-        return NextResponse.json({ message: error }, { status: 500 });
-    }
+export async function POST(req: NextRequest) {
+  try {
+    const message = await client.messages.create({
+      body: '🙏 Someone is at the door. Please let them in. 🥺',
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: process.env.TEST_USER, 
+    });
+    console.log(message.sid);
+    return NextResponse.json({ message: "It worked." }, { status: 200 });
+  } catch (error) {
+    console.log('Error sending SMS:', error);
+    return NextResponse.json({ message: error.message }, { status: 500 });
+  }
 }
+
+// import { NextRequest, NextResponse } from "next/server";
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const client = require('twilio')(accountSid, authToken);
+
+// export async function POST(req: NextRequest, res: NextResponse) {
+
+//     try {
+//         const message = await client.messages.create({
+//             body: '🙏 Someone is at the door. Please let them in. 🥺',
+//             from: process.env.TWILIO_PHONE_NUMBER,
+//             to: process.env.TEST_USER
+//         })
+//         console.log(message.sid);
+//         return NextResponse.json({ message: "It worked." }, { status: 200 });
+//     } catch (error) {
+//         console.log('Error sending SMS:', error);
+//         return NextResponse.json({ message: error }, { status: 500 });
+//     }
+// }
 
 
 
