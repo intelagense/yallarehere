@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const message = await client.messages.create({
       body: '🙏 Someone is at the door. Please let them in. 🥺',
-      from: process.env.TWILIO_PHONE_NUMBER,
+      from: 'whatsapp:+14155238886',
       to: process.env.TEST_USER, 
     });
     console.log(message.sid);
