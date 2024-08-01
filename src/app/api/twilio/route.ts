@@ -15,9 +15,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "It worked." }, { status: 200 });
   } catch (error) {
     console.log('Error sending SMS:', error);
-    return NextResponse.json({ message: error.message }, { status: 500 });
+    if (error instanceof Error) {
+      return NextResponse.json({ message: error.message }, { status: 500 });
+    } else {
+      return NextResponse.json({ message: "An unknown error occurred" }, { status: 500 });
+    }
   }
 }
+
 
 // import { NextRequest, NextResponse } from "next/server";
 // const accountSid = process.env.TWILIO_ACCOUNT_SID;
