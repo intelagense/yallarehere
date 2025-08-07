@@ -32,7 +32,7 @@ export default function Event({ params }: { params: { eventID: string } }) {
     setButtonClicked(true);
     try {
       const res = await fetch(
-        `${process.env.DOMAIN}/api/twilio`, {
+        `${process.env.DOMAIN}/api/telegram`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
